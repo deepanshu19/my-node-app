@@ -1,0 +1,23 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - master 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build and test
+        run:  | # Replace these commands with your build and test scripts
+           echo "Building and testing your application..."
+
+      - name: Deploy to Jenkins
+        uses: appleboy/jenkins-action@v2
+        with:
+         url: http://localhost:9090/
+         user: dm_19
+         token: 11ee720f6c85d99084d5723f500615c3de
+         job: jenkins-git # Replace with your Jenkins job name
