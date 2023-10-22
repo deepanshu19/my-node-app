@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Build and test
         run:  | # Replace these commands with your build and test scripts
            echo "Building and testing your application..."
@@ -21,3 +21,6 @@ jobs:
          user: dm_19
          token: 11ee720f6c85d99084d5723f500615c3de
          job: jenkins-git # Replace with your Jenkins job name
+      - name: Trigger Jenkins Job
+        run: |
+         curl -X POST http://your-jenkins-server-url/buildByToken/buildWithParameters?job=Your_Jenkins_Job_Name&token=YOUR_JOB_TOKEN
