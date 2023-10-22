@@ -51,6 +51,7 @@ name: Install Dependencies
       
 name: Run Tests
       run: npm test
+
 deploy:
     runs-on: ubuntu-latest
     needs: [build, test]  # This job depends on both "build" and "test" jobs
