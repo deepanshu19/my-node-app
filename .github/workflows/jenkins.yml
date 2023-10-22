@@ -15,7 +15,7 @@ jobs:
            echo "Building and testing your application..."
 
       - name: Deploy to Jenkins
-        uses: jenkinsci/github-plugin@2
+        uses: appleboy/jenkins-action@v3
         with:
          url: http://localhost:9090/
          user: dm_19
